@@ -1,0 +1,22 @@
+<?import javafx.scene.layout.GridPane?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+<?import javafx.scene.control.Label?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<GridPane fx:controller="com.filefinder.gui.Controller" xmlns:fx="http://javafx.com/fxml" alignment="TOP_LEFT" hgap="10" vgap="10" stylesheets="@css/main.css">
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" prefWidth="100.0" />
+    </columnConstraints>
+
+    <CustomTextField fx:id="searchBox" styleClass="searchField" onKeyTyped="#handleSearchboxKeyTyped" >
+        <left>
+            <Label styleClass="searchBoxLabel">
+                <graphic>
+                    <FontAwesomeIconView styleClass="searchBoxLabelIcon" />
+                </graphic>
+            </Label>
+        </left>
+    </CustomTextField>
+
+</GridPane>
