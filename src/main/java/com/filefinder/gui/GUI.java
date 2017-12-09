@@ -13,12 +13,13 @@ import org.apache.logging.log4j.Logger;
 
 public class GUI extends Application {
 
-    final static Logger LOGGER = LogManager.getLogger(GUI.class);
-    public static Stage primaryStage = null;
+    private final static Logger LOGGER = LogManager.getLogger(GUI.class);
+    private static Stage primaryStage = null;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        this.primaryStage = primaryStage;
+    public void start(Stage primaryStage) throws Exception
+    {
+        GUI.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         root.setStyle("-fx-background-color: rgba(255, 255, 255, 0.0);");
 
@@ -29,12 +30,15 @@ public class GUI extends Application {
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setTitle("File Finder");
         primaryStage.setAlwaysOnTop(true);
+
+        // show first so that the search box gets the focus correctly the first time
         primaryStage.show();
+        primaryStage.hide();
 
         // Do not exit when hiding
         Platform.setImplicitExit(false);
 
-        LOGGER.info("FileFinder started!");
+        LOGGER.info("GUI launched.");
     }
 
     public static void main(String[] args) {
