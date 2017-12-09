@@ -36,7 +36,7 @@ public class Controller implements Initializable{
             // Hide on escape
             if(KeyCode.ESCAPE.equals(event.getCode()))
             {
-                GUI.getPrimaryStage().hide();
+                GUIUtils.toggleShow();
             }
         });
     }
