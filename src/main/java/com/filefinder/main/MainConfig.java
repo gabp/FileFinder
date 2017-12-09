@@ -1,6 +1,6 @@
 package com.filefinder.main;
 
-import com.filefinder.globallisteners.GlobalKeyListener;
+import com.filefinder.nativehook.GlobalKeyListener;
 import com.filefinder.services.ManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,15 +9,15 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan({"com.filefinder.services",
-                "com.filefinder.globallisteners"})
+                "com.filefinder.nativehook"})
 public class MainConfig
 {
     @Autowired
     @Qualifier("ManagementServiceImpl")
-    ManagementService managementService;
+    private ManagementService managementService;
 
     @Autowired
-    GlobalKeyListener globalKeyListener;
+    private GlobalKeyListener globalKeyListener;
 
     private static MainConfig mainConfig;
 
